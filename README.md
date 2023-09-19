@@ -9,7 +9,7 @@ A logística da cadeia de abastecimento desempenha um papel crucial na preserva�
 A arquitetura proposta consiste em seis camadas: camada de usuário, camada de aplicação, camada data gateway, camada de banco de dados híbrido, camada de computação em névoa e camada de IoT com computação de borda.
 
 - **Camada de usuário**: inclui produtores/fabricantes, empresas de logística, consumidores e administradores do sistema. Eles desempenham papéis específicos, como atribuir códigos eletrônicos aos produtos, monitorar parâmetros de armazenamento e gerenciamento do sistema.
-  - **Camada de aplicação**: oferece serviços como gerenciamento de usuários, dispositivos, produtos, regulamentação de qualidade e rastreabilidade de produtos.
+- **Camada de aplicação**: oferece serviços como gerenciamento de usuários, dispositivos, produtos, regulamentação de qualidade e rastreabilidade de produtos.
 A camada data gateway atua como middleware para processamento, armazenamento e consulta de dados. Ela inclui serviços como gerenciador de armazenamento, verificador de integridade de dados e análise de risco e alerta inteligente.
 - **Camada de banco de dados híbrido**: combina blockchain e bancos de dados tradicionais para otimizar o desempenho e a escalabilidade. Os dados são armazenados on-chain e off-chain de acordo com a necessidade.
 - **Camada de computação em névoa**: inclui gerenciamento de armazenamento, dispositivos, controle de conexão e validação de dados para dispositivos IoT.
