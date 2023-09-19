@@ -1,6 +1,6 @@
 # An Architecture Proposal Using Hybrid Blockchain Applied for Supply Chain Tracking
 
-## Submissão de artigos ao IEEE América Latina ( ID: 8343 ) 
+##  Artigo submetido ao IEEE Latin America Transactions ( ID: 8343 ) 
 
 A logística da cadeia de abastecimento desempenha um papel crucial na preservação da qualidade e segurança de produtos perecíveis. No entanto, a rastreabilidade e monitoramento ao longo da cadeia tradicional frequentemente enfrentam desafios de falta de transparência e confiabilidade, levando a perdas e riscos à saúde pública. Este artigo propõe uma arquitetura que integra a Internet das Coisas (IoT), um banco de dados híbrido composto por Hyperledger e MongoDB, e computação em névoa e borda para aprimorar a logística desses produtos. A IoT possibilita a coleta de dados em tempo real sobre as condições ambientais, enquanto a computação em névoa e borda processa os dados mais próximos da fonte, permitindo ações instantâneas com atuadores. O banco de dados híbrido assegura a rastreabilidade ao armazenar informações de forma segura e imutável. Foi desenvolvido um protótipo que passou por testes, demonstrando os benefícios da abordagem híbrida de banco de dados e aprimorando a rastreabilidade e eficiência na gestão da cadeia de abastecimento. Embora desafios relacionados à escalabilidade tenham sido identificados, esta arquitetura possui o potencial de elevar os padrões do setor.
 
