@@ -11,7 +11,7 @@ A arquitetura proposta consiste em seis camadas: camada de usuário, camada de a
 - **Camada de usuário**: inclui produtores/fabricantes, empresas de logística, consumidores e administradores do sistema. Eles desempenham papéis específicos, como atribuir códigos eletrônicos aos produtos, monitorar parâmetros de armazenamento e gerenciamento do sistema.
 - **Camada de aplicação**: oferece serviços como gerenciamento de usuários, dispositivos, produtos, regulamentação de qualidade e rastreabilidade de produtos.
 A camada data gateway atua como middleware para processamento, armazenamento e consulta de dados. Ela inclui serviços como gerenciador de armazenamento, verificador de integridade de dados e análise de risco e alerta inteligente.
-- **Camada de banco de dados híbrido**: combina blockchain e bancos de dados tradicionais para otimizar o desempenho e a escalabilidade. Os dados são armazenados on-chain e off-chain de acordo com a necessidade.
+- **Camada de banco de dados híbrido**: combina blockchain (HyperLedger Fabric) e bancos de dados tradicionais (MongoDB) para otimizar o desempenho e a escalabilidade. Os dados são armazenados on-chain e off-chain de acordo com a necessidade.
 - **Camada de computação em névoa**: inclui gerenciamento de armazenamento, dispositivos, controle de conexão e validação de dados para dispositivos IoT.
 - **Camada de IoT, juntamente com a computação de borda**: abrange o gerenciamento e monitoramento de dispositivos, o controle das conexões e a geração de alertas, bem como a capacidade de atuadores para realizar ações com base nas informações ambientais coletadas.
 
