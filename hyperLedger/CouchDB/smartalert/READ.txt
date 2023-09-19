@@ -1,0 +1,20 @@
+./minifab up -s couchdb -e true -i 2.3.0
+
+./minifab ccup -v 1.0.0 -n smartalert  -l go -r true -p ''
+
+./minifab invoke -n smartalert -p '"CreateAsset","Assert1", "1234", "3123123123", "1", "weqweqweasdasdsad", "27/07/2023", "", "", "", "Testando Insert"' 
+
+./minifab query -n smartalert -p '"GetAllAssets"'
+
+./minifab query -n smartalert -p '"AssetExists","Assert1"'
+
+./minifab query -n smartalert -p '"GetAssetHistory","Assert1"'
+
+
+./minifab query -n smartalert -p   '"QueryAssets", "{\"selector\":{\"ID\":\"Assert1\"}}"'
+./minifab query -n smartalert -p   '"QueryAssets", "{\"selector\":{\"ID\":\"Assert1\", \"Type\":\"3123123123\"}}"'
+
+Exemplo de dado salvo
+{"ID":"0e2b14d8d2047e939e5fa3149bfefe73602e31cd6df2789bf6c1dcb5a45d6664613852db5271dd36c4bfca9b8bea3793739f69cefe0328782a56e3109350684c","IdEdge":"1234","IdNodo":"671109120","Type":"5","Hash":"0e2b14d8d2047e939e5fa3149bfefe73602e31cd6df2789bf6c1dcb5a45d6664613852db5271dd36c4bfca9b8bea3793739f69cefe0328782a56e3109350684c","Date":"time.Date(2023, time.July, 24, 14, 33, 59, 746158636, time.Local)","Temperatura":"","Umidade":"","Rele":"","Description":""}
+./minifab query -n smartalert -p   '"QueryAssets", "{\"selector\":{\"Hash\":\"b2d56713e73fdc0e1cd8874e0ac4fc5eae096fa19c6b5007c46be64c103c6801c72565a7b60ef48a60e568d952239af66e599be8abc8e19592073a74d07a7955\"}}"'
+

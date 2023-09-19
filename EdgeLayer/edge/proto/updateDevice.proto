@@ -1,0 +1,39 @@
+syntax = "proto3";
+package protofiles;
+
+
+option go_package = "./";
+
+message RegisterDeviceRequest {
+  int32      idDevice        =    1;  
+  string     hash            =    2;
+  string     type            =    3;
+  string     date            =    4;
+  string     description     =    5;    
+}
+
+message RegisterDeviceResponse {
+    string msg =1;
+    bool     confirmation = 2;
+}
+
+service RegisterDevice {
+  rpc MakeRegisterDevice (RegisterDeviceRequest) returns (RegisterDeviceResponse) {}
+}
+
+message RemoveDeviceRequest {
+  int32      idDevice        =    1;  
+  string     hash            =    2;
+  string     type            =    3;
+  string     date            =    4;
+  string     description     =    5;    
+}
+
+message RemoveDeviceResponse {
+    string msg =1;
+    bool     confirmation = 2;
+}
+
+service RemoveDevice {
+  rpc MakeRemoveDevice(RemoveDeviceRequest) returns (RemoveDeviceResponse) {}
+}

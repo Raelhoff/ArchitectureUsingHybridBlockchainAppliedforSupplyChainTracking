@@ -1,0 +1,55 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Gerenciamento de carros</li>
+    </ol>
+  </nav>
+  <div class="container">
+    <div class="card list-car">
+      <h5 class="card-header">Lista de carros</h5>
+      <div class="card-body">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">IdEdge</th>
+                <th scope="col">IdNodo</th>
+                <th scope="col">Input1</th>
+                <th scope="col">Input2</th>
+                <th scope="col">Output</th>
+                <th scope="col">Hash</th>
+                <th scope="col">Alarm_battery</th>
+                <th scope="col">Alarm_power</th>
+                <th scope="col">Sensor_error</th>
+                <th scope="col">Temperatura</th>
+                <th scope="col">Umidade</th>
+                <th scope="col">CreatedAt</th>
+                <th scope="col">UpdatedAt</th>
+                <th scope="col">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let device of devices">
+                <td>{{device.ID}}</td>
+                <td>{{device.idedge}}</td>
+                <td>{{device.idnodo}}</td>
+                <td>{{device.input1}}</td>
+                <td>{{device.input2}}</td>
+                <td>{{device.output}}</td>
+                <td>{{device.hash}}</td>
+                <td>{{device.alarm_battery}}</td>
+                <td>{{device.alarm_power}}</td>
+                <td>{{device.sensor_error}}</td>
+                <td>{{device.temperatura}}</td>
+                <td>{{device.umidade}}</td>
+                <td>{{ device.createdAt | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+                <td>{{ device.updatedAt | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+                <td>
+                  <button type="button" class="btn btn-warning btn-sm" [routerLink] ="['/deviceupdate',device.ID]">Editar</button>
+                  <button type="button" class="btn btn-danger btn-sm ml-1" (click)="deleteDevice(device)">Deletar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  

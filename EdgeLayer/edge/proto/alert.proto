@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package alert;
+
+
+option go_package = "./packge";
+
+message AlertRequest {
+  int32      id              =    1;
+  int32      idEdge          =    2;  
+  int32      idNodo          =    3;  
+  string     hash            =    4;
+  int32      type            =    5;
+  string     date            =    6;
+  string     temperatura     =    7;
+  string     umidade         =    8;
+  string     rele            =    9;
+  string     description     =    10;    
+}
+
+message AlertResponse {
+    string    msg =1;
+    bool      confirmation = 2;
+    string     type            =    3;
+}
+
+service Alert {
+  rpc SendAlert(AlertRequest) returns (AlertResponse) {}
+}
+

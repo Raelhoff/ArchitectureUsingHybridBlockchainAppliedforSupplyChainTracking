@@ -1,0 +1,17 @@
+https://dev.to/hackmamba/build-a-rest-api-with-golang-and-mongodb-fiber-version-4la0
+
+
+SQLite
+https://codevoweb.com/build-a-simple-api-in-golang-using-fiber-and-sqlite/
+https://faun.pub/building-a-rest-api-with-go-and-sqlite-part-1-97c29ed2f282
+
+
+CREATE TABLE  devices (`inserted_id`,`id_device`,`input1`,`input2`,`output`,`alarm_battery`,`alarm_power`,`sensor_error`,`temperatura`,`umidade`,`created_at`, `updated_at`) 
+CREATE TABLE  devices (`inserted_id`,`id_edge`, `id_node`,`input1`,`input2`,`output`,`alarm_battery`,`alarm_power`,`sensor_error`,`temperatura`,`umidade`,`created_at`, `updated_at`) 
+
+CREATE TABLE device(id INTEGER PRIMARY KEY, idDevice INT, input1 INT, input2 INT, output INT, alarm_battery INT, alarm_power INT, sensor_error INT, temperatura REAL, umidade REAL, lastUpdated DATETIME);
+
+
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH

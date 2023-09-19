@@ -1,0 +1,21 @@
+./minifab up -s couchdb -e true -i 2.3.0
+
+./minifab ccup -v 1.0.0 -n smartalerthash  -l go -r true -p ''
+
+./minifab apprun -l node
+./minifab apprun -l go
+
+./minifab invoke -n smartalerthash -p '"CreateAsset","1312313123"’ 
+
+./minifab invoke -n smartalerthash -p '"UpdateAsset","Assert1", "Ka", "Ford", "2019/2020", "São Paulo", "SE 1.0 4 portas"’ 
+
+
+./minifab query -n smartalerthash -p '"GetAllAssets"'
+
+./minifab query -n smartalerthash -p '"AssetExists","1312313123"'
+
+./minifab query -n smartalerthash -p '"GetAssetHistory","1312313123"'
+
+Exemplo de Dado
+"ID":"fff47220d6001418d9158ed5c5c82c659b1cabb7779ace1b271966a7dc5a73a72b729327e20df3104cb3eb61532478ad27821116cc78a8472d0e4e04731c9aea","IdDevice":"1234","Type":"critico","ProductionDate":"2023-07-23T13:59:55-03:00","ProductionLocation":"São José","Description":"------"}
+./minifab query -n smartalerthash -p   '"QueryAssets", "{\"selector\":{\"HASH\":\"1312313123\"}}"'

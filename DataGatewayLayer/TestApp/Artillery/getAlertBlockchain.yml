@@ -1,0 +1,15 @@
+config:
+  target: "http://192.168.0.192:80"  # URL do seu aplicativo
+  phases:
+    - duration: 60  # duração da fase de teste em segundos
+      arrivalRate: 5  # taxa de chegada de requisições por segundo
+
+scenarios:
+  - flow:
+      - post:
+          url: "/query-assets"  # URL da rota POST do seu aplicativo
+          json:
+            selector:
+              Hash: "abc123xyz"
+engines:
+  perVU: 20  # 20 threads concorrentes

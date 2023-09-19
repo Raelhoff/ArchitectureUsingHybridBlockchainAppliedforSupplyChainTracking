@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "a82279b7-8b42-4ac5-a2db-34faa4b02ea4",
+		"name": "DataGatewayLayer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Device",
+			"item": [
+				{
+					"name": "getAllDevice",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DeviceEdge",
+			"item": [
+				{
+					"name": "getAllDeviceEdge",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DeviceNode",
+			"item": [
+				{
+					"name": "getAllDeviceNodo",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EdgeActive",
+			"item": [
+				{
+					"name": "getAllEdgeActive",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "NodeActive",
+			"item": [
+				{
+					"name": "getAllNodeActive",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "192.168.0.192:80/devicesNodeActives"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Alert",
+			"item": [
+				{
+					"name": "getAlert",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getAlertID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "cadastro",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AssetHyperLegger",
+			"item": [
+				{
+					"name": "query-assets",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "create-assets",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AlertHash",
+			"item": [
+				{
+					"name": "cadastro",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AlertHashBack",
+			"item": [
+				{
+					"name": "cadastro",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

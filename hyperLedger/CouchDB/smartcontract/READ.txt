@@ -1,0 +1,14 @@
+./minifab up -s couchdb -e true -i 2.3.0
+
+./minifab ccup -v 1.0.0 -n smartcontract  -l go -r true -p ''
+
+./minifab invoke -n smartcontract -p '"CreateAsset","Assert1", "Ka", "Ford", "2019", "São Paulo", "SE 1.0 4 portas"’ 
+
+./minifab invoke -n smartcontract -p '"UpdateAsset","Assert1", "Ka", "Ford", "2019/2020", "São Paulo", "SE 1.0 4 portas"’ 
+
+
+./minifab query -n smartcontract -p '"GetAllAssets"'
+
+./minifab query -n smartcontract -p '"AssetExists","Assert1"'
+
+./minifab query -n smartcontract -p '"GetAssetHistory","Assert1"'

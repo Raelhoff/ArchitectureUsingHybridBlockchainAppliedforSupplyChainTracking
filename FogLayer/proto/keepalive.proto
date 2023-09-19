@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package keepalive;
+
+
+option go_package = "./packge";
+
+message KeepAliveRequest {
+  int32      idEdge          =    1;  
+  int32      idNodo          =    2;
+  int32      type            =    3;
+  string     date            =    4;  
+  string     msg             =    5;
+}
+
+message KeepAliveResponse {
+  int32      idEdge          =    1;  
+  int32      idNodo          =    2;
+  int32      type            =    3;
+  string     date            =    4;  
+  string     msg             =    5;
+  bool      confirmation     =    6;
+}
+
+service KeepAlive {
+  rpc MakeKeepAlive(KeepAliveRequest) returns (KeepAliveResponse) {}
+}
+

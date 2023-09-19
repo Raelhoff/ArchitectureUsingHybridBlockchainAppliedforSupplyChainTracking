@@ -1,0 +1,3 @@
+./minifab up -s couchdb -e true -i 2.3.0
+
+./minifab ccup -v 1.0.0 -n smartcar  -l go -r true -p ''

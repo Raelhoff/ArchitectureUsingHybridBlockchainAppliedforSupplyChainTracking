@@ -1,0 +1,29 @@
+<nav aria-label="breadcrumb">
+  </nav>
+  <div class="container">
+    <div class="card list-car">
+      <h5 class="card-header">Lista de alertas</h5>
+      <div class="card-body">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">IdEdge</th>
+                <th scope="col">IdNodo</th>
+                <th scope="col">Type</th>
+                <th scope="col">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let alerta of alertas">
+                <td>{{alerta.ID}}</td>
+                 <td>{{alerta.idedge}}</td>
+                <td>{{alerta.idnodo}}</td>
+                <td>{{alerta.type}}</td>
+                <td>{{ alerta.date | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  

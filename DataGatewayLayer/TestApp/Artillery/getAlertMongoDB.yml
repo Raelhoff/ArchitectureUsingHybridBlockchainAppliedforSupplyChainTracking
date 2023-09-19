@@ -1,0 +1,14 @@
+config:
+  target: "http://192.168.0.192:80"  # URL do seu aplicativo
+  phases:
+    - duration: 60  # duração da fase de teste em segundos
+      arrivalRate: 5  # taxa de chegada de requisições por segundo
+
+scenarios:
+  - flow:
+      - post:
+          url: "/alert/46248cc0362a03ae798d69d9f12215d5758246f7a3b3b2179d2596bc13f5d1ef85c92adab4ed7030596c6077c203122c0545e7c4936653c1384cd16f6241024f"  # URL completa do endpoint
+
+
+engines:
+  perVU: 20  # 20 threads concorrentes

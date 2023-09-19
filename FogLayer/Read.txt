@@ -1,0 +1,29 @@
+https://dev.to/hackmamba/build-a-rest-api-with-golang-and-mongodb-fiber-version-4la0
+
+
+SQLite
+https://codevoweb.com/build-a-simple-api-in-golang-using-fiber-and-sqlite/
+https://faun.pub/building-a-rest-api-with-go-and-sqlite-part-1-97c29ed2f282
+
+
+CREATE TABLE  devices (`hash`,`id_device`,`input1`,`input2`,`output`,`alarm_battery`,`alarm_power`,`sensor_error`,`temperatura`,`umidade`,`created_at`, `updated_at`) 
+
+CREATE TABLE device(id INTEGER PRIMARY KEY, idDevice INT, input1 INT, input2 INT, output INT, alarm_battery INT, alarm_power INT, sensor_error INT, temperatura REAL, umidade REAL, lastUpdated DATETIME);
+
+CREATE TABLE device_hashes(id INTEGER PRIMARY KEY, id_device INTEGER , hash TEXT NOT NULL, date TEXT NOT NULL);
+
+CREATE TABLE device_edge(id_edge INTEGER PRIMARY KEY, ip TEXT ,  user TEXT, date TEXT,  hash TEXT);
+INSERT INTO device_edge (id_edge) VALUES(1234);
+
+/usr/lib/go-1.18/src/fiber-mongo-api/
+
+
+CREATE TABLE devicehash('hash','id_device', 'date');
+SELECT * FROM sqlite_master WHERE type='table';
+
+https://pt.stackoverflow.com/questions/171687/como-listar-todas-as-tabelas-de-um-banco-sqlite
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+protoc --go_out=plugins=grpc:. proto/mensagem.proto

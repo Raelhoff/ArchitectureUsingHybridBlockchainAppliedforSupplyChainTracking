@@ -1,0 +1,17 @@
+artillery run getAlertMongoDB.yml
+artillery  run getAlertBlockchain.yml
+
+artillery run postAlert.yml
+artillery run postCreateAssety.yml
+
+
+artillery run postAlert.yml -o results.html results.json
+
+
+artillery run postAlert.yml
+
+
+
+artillery run createAlertHashBack.yml -o results.html results.json
+
+artillery run -e COUNT=<quantidade> createAlertHashBack.yml -o results.html -r results.json

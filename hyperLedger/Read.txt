@@ -1,0 +1,124 @@
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
+
+
+remover todos os containers
+docker rm $(docker ps -a -q)
+
+docker inspect -f '{{.Name}} - {{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $(docker ps -aq)
+
+** SUBIR MINIFABRIC LEVELDB
+./minifab up 
+
+****** LEVELDB SmarContract
+
+./minifab ccup -v 1.0.0 -n smart -l go -r true -p ''
+./minifab invoke -n smart -p '"invoke","12346","1", "1", "0", "1","1","1","1","20.3","12.3","0"'
+./minifab invoke -n smart -p '"put","1234","1", "1", "0", "1","1","1","1","1","1","1"'
+
+./minifab invoke -n smart -p '"query","1234"'
+
+./minifab apprun -l go
+
+./minifab invoke -n smart -p '"invoke","12346","1", "1", "0", "1","1","1","1","20.3","12.3","0"'
+./minifab invoke -n smart -p '"query","12346"'
+
+minifab ccup -v 3.0 -n simple -l go -r true -p '"init","a","200","b","300"'
+
+Invoke chaincode methods
+
+minifab invoke -n simple -p '"invoke","a","b","5"'
+
+minifab invoke -n simple -p '"invoke","a","b","5",”a”,”B”'
+
+
+samplecc
+
+./minifab ccup -v 1.0.0 -n samplecc -l go -r true -p ''
+
+./minifab  invoke -n samplecc -p '"invoke","put", "a","b","1"'
+./minifab ccup -v 3.0 -n samplecc -l go -r true -p '"init","a","200","b","300"'
+./minifab invoke -n samplecc -p '"invoke","get","a"'
+
+
+smart
+./minifab invoke -n smart -p '"invoke","get","a"'
+
+./minifab ccup -v 1.0.0 -n smart -l go -r true -p ''
+
+./minifab invoke -n smart -p '"invoke","rafa","1"'
+./minifab invoke -n smart -p '"query","rafa"'
+
+./minifab invoke -n smart -p '"invoke","05952065902","Rafael Wilmar"'
+./minifab invoke -n smart -p '"query","05952065902"'
+
+./minifab invoke -n smart -p '"put","05952065902","Rafael Wilmar"'
+./minifab invoke -n smart -p '"query","05952065902"'
+
+./minifab invoke -n smart -p '"put","88450171091","Stefania Tamara Hoffmann"'
+./minifab invoke -n smart -p '"query","88450171091"'
+
+./minifab invoke -n smart -p '"delete","05952065902"'
+./minifab invoke -n smart -p '"query","05952065902"'
+
+./minifab apprun -l node
+./minifab apprun -l go
+
+smart_v7
+./minifab ccup -v 1.0.0 -n smart  -l go -r true -p ''
+./minifab invoke -n smart -p '"invoke","1234","1", "1", "0", "1","1","1","1","1","1","0"'
+./minifab invoke -n smart -p '"put","1234","1", "1", "0", "1","1","1","1","1","1","1"'
+
+./minifab invoke -n smart -p '"query","1234"'
+./minifab invoke -n smart -p '"queryAll","1234"'
+
+******* Create APP Exemple
+./minifab apprun -l node
+./minifab apprun -l go
+
+** SUBIR MINIFABRIC COUCHDB
+./minifab up -s couchdb -e true -i 2.3.0
+
+****** COUCHDB SmarContract
+
+./minifab ccup -v 1.0.0 -n smartcar  -l go -r true -p ''
+./minifab ccup -v 1.0.0 -n smartcontract  -l go -r true -p ''
+./minifab invoke -n smartcontract -p '"CreateAsset","Assert1", "Ka", "Ford", "2019", "São Paulo", "SE 1.0 4 portas"’ 
+
+./minifab invoke -n smartcontract -p '"UpdateAsset","Assert1", "Ka", "Ford", "2019/2020", "São Paulo", "SE 1.0 4 portas"’ 
+
+./minifab query -n smartcontract -p '"GetAllAssets"'
+
+./minifab query -n smartcontract -p '"AssetExists","Assert1"'
+
+****** COUCHDB smarthash
+
+./minifab ccup -v 1.0.0 -n smarthash  -l go -r true -p ''
+
+./minifab invoke -n smarthash -p '"CreateAsset","111290", "123433", "critico", "18/07/2023", "São José", "Teste"'
+./minifab query -n smarthash -p '"AssetExists","111290"'
+./minifab query -n smarthash -p '"ReadAsset","111290"'
+
+./minifab invoke -n smarthash -p '"UpdateAsset","111290", "123433", "normal", "18/07/2023", "São José", "Teste2"' 
+./minifab query -n smarthash -p '"ReadAsset","111290"'
+
+GetAssetHistory
+./minifab query -n smarthash -p '"GetAssetHistory","111290"'
+
+
+./minifab query -n smarthash -p '"ReadAsset","111290"'
+
+./minifab query -n smarthash -p   '"QueryAssets", "{\"selector\":{\"ID\":\"111290\"}}"'
+./minifab query -n smarthash -p   '"QueryAssets", "{\"selector\":{\"IdDevice\":\"123433\"}}"'
+
+./minifab query -n smarthash -p   '"QueryAssets", "{\"selector\":{\"Type\":\"critico\"}}"'
+./minifab query -n smarthash -p   '"QueryAssets", "{\"selector\":{\"IdDevice\":\"1234\"}}"'
+./minifab query -n smarthash -p   '"QueryAssets", "{\"selector\":{\"IdDevice\":\"111290\"}}"'
+./minifab query -n smarthash -p   '"QueryAssets", "{\"selector\":{\"ID\":\"06bdbb72d4526b6e3c27a2e3bafa83bc4a23f79d72010fa919590e611bea0d2c53c6c4afa393700b5eef7751dd6daea77b3d27779a905a5b70e3ed7ee347226a\"}}"'
+
+
+
+******* Create APP Exemple
+./minifab apprun -l node
+./minifab apprun -l go

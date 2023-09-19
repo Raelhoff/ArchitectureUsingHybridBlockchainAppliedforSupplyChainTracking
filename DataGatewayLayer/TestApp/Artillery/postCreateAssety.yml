@@ -1,0 +1,46 @@
+config:
+  target: 'http://192.168.0.192:80'
+  phases:
+    - duration: 1  # duração da fase de teste em segundos
+      arrivalRate: 1  # taxa de chegada de requisições por segundo
+  payload:
+    path: "data.csv"
+    fields:
+      - "id"
+      - "IdEdge"
+      - "IdNodo"
+      - "Hash"
+      - "Type"
+      - "Date"
+      - "Temperatura"
+      - "Umidade"
+      - "Rele"
+      - "Description"
+    loadAll: true
+    name: alertData
+
+plugins:
+  summary:
+    module: "artillery-plugin-summary"
+    
+scenarios:
+  - flow:
+      - loop:
+          - post:
+              url: "/create-assets"
+              json:
+                id:   "1{{ $loopElement.id  }}"  # Convertendo o campo "id" para string
+                idedge: "16{{ $loopElement.IdEdge }}"
+                idnodo: "16{{ $loopElement.IdNodo }}"
+                hash: "{{ $loopElement.Hash }}"
+                type: "0{{ $loopElement.Type  }}"
+                date: "{{ $loopElement.Date }}"
+                temperatura: ""  # Converter para string
+                umidade: ""  # Converter para string
+                rele: "{{ $loopElement.Rele }}"
+                description: "{{ $loopElement.Description }}"
+        over: alertData
+#        count: 20  # Número de solicitações
+engines:
+    perVU: 1  # 1 thread por usuário virtual
+    maxVUs: 20  # Total de 20 usuários virtuais
